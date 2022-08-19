@@ -1,0 +1,126 @@
+<section data-markdown>
+    <script type="text/template">
+        <a href="https://compass.ie" target="_blank">
+            <img class="plain" src="images/Compass Informatics_Mono_White.png" style="background: none;" />
+        </a>
+
+        ## Introducing Wayfarer
+
+        #### by Seth Girvin, [Compass Informatics](https://compass.ie/)
+
+        <img class="plain" src="images/foss4g.png" style="background: none;" />
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ## What is Wayfarer?
+
+        * A Python library for creating and analysing geospatial networks using NetworkX
+        * Works with graphs - collections of **nodes** and **edges**
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ## What is Wayfarer?
+
+        * A Python library for creating and analysing geospatial networks using NetworkX
+        * Works with graphs - collections of *nodes* and *edges*
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ## Network Loading and Routing
+
+        <pre>
+        <code data-trim data-noescape>
+import fiona
+from wayfarer import loader
+
+recs = fiona.open("mydata.shp", "r")
+net = loader.load_network(recs, key_field="osm_id")
+start_node, end_node = 148267, 1890123
+edges = routing.solve_shortest_path(net, start_node, end_node)
+            </code>
+        </pre>
+    </script>
+</section>
+
+
+
+
+<section data-markdown>
+    <script type="text/template">
+        ## Why use Wayfarer?
+
+        * Works with any data source
+        * Easy access to the network structure
+        * Builds on [NetworkX](https://networkx.org/) - 100s of [Algorithms](https://networkx.org/documentation/stable/reference/algorithms/index.html)
+
+    </script>
+</section>
+
+<section data-markdown data-background="images/rivers.png" data-background-size="100%">
+    <script type="text/template">
+        <div class="meta">
+            Suir River Network
+        </div>
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ### Network Solving
+
+        <img class="plain" src="images/upstream_solve.png" style="background: none;" height="70%" width="70%"/>
+
+        <pre>
+        <code data-trim data-noescape>
+upstream_nodes_ids = ancestors(net, node_id_from)
+edges = net.in_edges(nbunch=upstream_nodes_ids, data=True)
+            </code>
+        </pre>
+
+        <div class="meta">
+            On behalf of Ireland's <a href="https://www.epa.ie/" target="_blank">Environmental Protection Agency</a></p>
+        </div>
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ### Road Network Comparison
+
+        <img class="plain" src="images/119409388.png" style="background: none;" width="70%" height="70%" />
+
+        <div class="meta">
+            On behalf of Ireland's <a href="http://www.rmo.ie/" target="_blank">Road Management Office</a>
+        </div>
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ## Where to find Wayfarer?
+
+        * https://github.com/compassinformatics/wayfarer/
+        * https://pypi.org/project/wayfarer/
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ### Thanks and Questions?
+
+        * [Seth Girvin](https://github.com/geographika)
+        *
+        <img class="plain" src="images/langfr-1280px-Twitter_Bird.svg.png" style="background: none;vertical-align:middle;height: 24px" />@geographika
+        * sgirvin@compass.ie
+    </script>
+</section>
