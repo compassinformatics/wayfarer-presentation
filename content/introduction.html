@@ -29,7 +29,7 @@
         <pre>
         <code data-trim data-noescape>
 import fiona
-from wayfarer import loader
+from wayfarer import loader, routing
 
 recs = fiona.open("mydata.shp", "r")
 net = loader.load_network(recs, key_field="osm_id")
@@ -108,9 +108,12 @@ edges = net.in_edges(nbunch=upstream_nodes_ids, data=True)
     <script type="text/template">
         ### Thanks and Questions?
 
-        * [Seth Girvin](https://github.com/geographika)
-        *
-        <img class="plain" src="images/langfr-1280px-Twitter_Bird.svg.png" style="background: none;vertical-align:middle;height: 24px" />@geographika
-        * sgirvin@compass.ie
+        + [Seth Girvin](https://github.com/geographika) -
+        <a href="https://twitter.com/geographika" target="_blank"><img class="plain" src="images/langfr-1280px-Twitter_Bird.svg.png" style="background: none;vertical-align:middle;height: 24px" />@geographika</a>
+
+        <a href="https://compass.ie" target="_blank">
+            <img class="plain" src="images/Compass Informatics_Mono_White.png" style="background: none; height: 60%; width: 60%;" />
+        </a>
+        <img class="plain" src="images/foss4g.png" style="background: none;" />
     </script>
 </section>
